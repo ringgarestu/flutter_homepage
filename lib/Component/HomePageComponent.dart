@@ -35,7 +35,7 @@ class MyBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xFFed174b),
-      padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
+      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

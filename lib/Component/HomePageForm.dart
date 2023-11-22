@@ -3,32 +3,44 @@ import 'package:flutter_homepage/Component/footer.dart';
 import 'package:flutter_homepage/Screens/homepageScreen.dart';
 import 'package:flutter_homepage/size_config.dart';
 import 'package:flutter_homepage/Component/customCard.dart';
+import 'package:flutter_homepage/Component/footer.dart';
 
-class HomePageForm extends StatelessWidget {
+class HomePageForm extends StatefulWidget {
+  @override
+  _HomePageForm createState() => _HomePageForm();
+}
+
+class _HomePageForm extends State<HomePageForm> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            expandedHeight: 250.0,
-            floating: false,
-            pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text('Your Header Title'),
-              background: FeaturedImage(),
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 16.0),
+          Container(
+            margin: const EdgeInsets.only(left: 16),
+            child: Text(
+              'Featured',
+              style: TextStyle(
+                color: Color(0xFF333333),
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [
-                customCard(title: "Card1", content: "content1"),
-                customCard(title: "Card2", content: "content2"),
-                customCard(title: "Card3", content: "content3"),
-                customCard(title: "Card4", content: "content4"),
-                customCard(title: "Card5", content: "content5"),
-              ],
-            ),
+          FeaturedImage(),
+          SizedBox(height: 16), // Tambahkan SizedBox ini untuk memberikan ruang
+          ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              customCard(title: "card 1", content: "content 1"),
+              customCard(title: "card 2", content: "content 2"),
+              customCard(title: "card 3", content: "content 3"),
+              customCard(title: "card 4", content: "content 4"),
+              customCard(title: "card 5", content: "content 5"),
+            ],
           ),
         ],
       ),
