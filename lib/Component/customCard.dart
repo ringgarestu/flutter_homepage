@@ -32,12 +32,13 @@ class customCard extends StatelessWidget {
   final String? title;
   final String content;
   final String customText;
+  final String? imagePath;
 
-  customCard({
-    this.title,
-    required this.content,
-    required this.customText,
-  });
+  customCard(
+      {this.title,
+      required this.content,
+      required this.customText,
+      this.imagePath});
 
   @override
   Widget build(BuildContext context) {

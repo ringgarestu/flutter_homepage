@@ -34,17 +34,37 @@ class _HomePageForm extends State<HomePageForm> {
             children: List.generate(5, (index) {
               if (index == 0) {
                 // Judul khusus untuk card pertama
-                return customCard(
-                  title: "Against the Odds",
-                  content: "Friday, 23 December 2023",
-                  customText: "Against the Odds",
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: customCard(
+                    title: "Against the Odds",
+                    content: "Saturday, 14 October 2023",
+                    customText: "at Sacaluna Coffee",
+                    imagePath: 'assets/images/image-1.jpeg',
+                  ),
+                );
+              } else if (index == 1) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
+                  child: customCard(
+                    title: "judul kedua",
+                    content: "konten kedua",
+                    customText: 'kustom teks kedua',
+                  ),
                 );
               } else {
-                // Judul umum untuk card lainnya
-                return customCard(
-                  title: "ini adalah judul ${index + 1}",
-                  content: "content ${index + 1}",
-                  customText: "custom text ${index + 1}",
+                // judul umum lainnya
+                return Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: customCard(
+                    title: "ini adalah judul ${index + 1}",
+                    content: "content ${index + 1}",
+                    customText: "custom text ${index + 1}",
+                  ),
                 );
               }
             }),
