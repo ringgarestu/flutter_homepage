@@ -32,11 +32,21 @@ class _HomePageForm extends State<HomePageForm> {
           SizedBox(height: 16),
           Column(
             children: List.generate(5, (index) {
-              return customCard(
-                title: "card ${index + 1}",
-                content: "content ${index + 1}",
-                customText: "custom text ${index + 1}",
-              );
+              if (index == 0) {
+                // Judul khusus untuk card pertama
+                return customCard(
+                  title: "Against the Odds",
+                  content: "Friday, 23 December 2023",
+                  customText: "Against the Odds",
+                );
+              } else {
+                // Judul umum untuk card lainnya
+                return customCard(
+                  title: "ini adalah judul ${index + 1}",
+                  content: "content ${index + 1}",
+                  customText: "custom text ${index + 1}",
+                );
+              }
             }),
           ),
         ],
@@ -69,7 +79,7 @@ class FeaturedImage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 22),
+          SizedBox(height: 30),
           Align(
             alignment: Alignment.centerLeft,
             child: Text(
