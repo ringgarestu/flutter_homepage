@@ -3,7 +3,6 @@ import 'package:flutter_homepage/Component/footer.dart';
 import 'package:flutter_homepage/Screens/homepageScreen.dart';
 import 'package:flutter_homepage/size_config.dart';
 import 'package:flutter_homepage/Component/customCard.dart';
-import 'package:flutter_homepage/Component/footer.dart';
 
 class HomePageForm extends StatefulWidget {
   @override
@@ -30,17 +29,15 @@ class _HomePageForm extends State<HomePageForm> {
             ),
           ),
           FeaturedImage(),
-          SizedBox(height: 16), // Tambahkan SizedBox ini untuk memberikan ruang
-          ListView(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              customCard(title: "card 1", content: "content 1"),
-              customCard(title: "card 2", content: "content 2"),
-              customCard(title: "card 3", content: "content 3"),
-              customCard(title: "card 4", content: "content 4"),
-              customCard(title: "card 5", content: "content 5"),
-            ],
+          SizedBox(height: 16),
+          Column(
+            children: List.generate(5, (index) {
+              return customCard(
+                title: "card ${index + 1}",
+                content: "content ${index + 1}",
+                customText: "custom text ${index + 1}",
+              );
+            }),
           ),
         ],
       ),

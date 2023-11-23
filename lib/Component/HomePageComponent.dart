@@ -11,20 +11,12 @@ class _HomePageComponent extends State<HomePageComponent> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenHeight(20),
-          ),
-          child: Column(
-            children: [
-              MyBanner(), // Menambahkan banner
-              MyHeader(), // menambahkan header
-              HomePageForm(),
-            ],
-          ),
-        ),
+      child: ListView(
+        children: [
+          MyBanner(),
+          MyHeader(),
+          HomePageForm(),
+        ],
       ),
     );
   }
