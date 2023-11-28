@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_homepage/Component/HomePageComponent.dart';
 import 'package:flutter_homepage/Component/footer.dart';
 import 'package:flutter_homepage/Screens/homepageScreen.dart';
 import 'package:flutter_homepage/size_config.dart';
@@ -69,6 +70,7 @@ class _HomePageForm extends State<HomePageForm> {
               }
             }),
           ),
+          Footer(),
         ],
       ),
     );
