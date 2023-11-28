@@ -98,59 +98,69 @@ double getProportionateScreenHeight(double inputWidth) {
 class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color(0xFFF8F8F8),
-      padding: EdgeInsets.all(16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: 'What is Dole?',
-                  style: TextStyle(
-                    color: Color(0xFFed174b),
-                    fontSize: 14,
-                    decoration: TextDecoration.underline,
+    return SingleChildScrollView(
+      child: Container(
+        color: Color(0xffe0e0e0),
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'What is Dole?',
+                    style: TextStyle(
+                      color: Color(0xFFed174b),
+                      fontSize: 14,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
-                ),
-                TextSpan(
+                  TextSpan(
                     text: '  •  ',
                     style: TextStyle(
                       color: Color(0xFF333333),
-                    )),
-                TextSpan(
-                  text: "Blog",
-                  style: TextStyle(
-                    color: Color(0xFFed174b),
-                    decoration: TextDecoration.underline,
+                    ),
                   ),
-                ),
+                  TextSpan(
+                    text: "Blog",
+                    style: TextStyle(
+                      color: Color(0xFFed174b),
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Divider(
+              color: Color(0xfff8f8f8),
+              thickness: 1,
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset("assets/images/facebook.png",
+                    width: 20, height: 20),
+                SizedBox(width: 13),
+                Image.asset("assets/images/instagram.png",
+                    width: 20, height: 20),
+                SizedBox(width: 13),
+                Image.asset("assets/images/twitter.png", width: 20, height: 20),
+                SizedBox(width: 13),
+                Image.asset("assets/images/linkedin.png",
+                    width: 20, height: 20),
+                SizedBox(width: 13),
+                Image.asset("assets/images/arroba.png", width: 20, height: 20),
               ],
             ),
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Divider(
-            color: Color(0xffe0e0e0),
-            thickness: 20,
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset("assets/images/facebook.png", width: 20, height: 20),
-              Image.asset("assets/images/instagram.png", width: 20, height: 20),
-              Image.asset("assets/images/twitter.png", width: 20, height: 20),
-              Image.asset("assets/images/linkedin.png", width: 20, height: 20),
-              Image.asset("assets/images/arroba.png", width: 20, height: 20),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
